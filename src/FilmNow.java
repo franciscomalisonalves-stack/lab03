@@ -10,7 +10,7 @@ public class FilmNow {
             return "Posição Invalida";
         }
         if(filmeJaAdicionado(filme)){
-            return "Filme já Adicionado";
+            return "Filme já Adicionao";
         }
 
     }
