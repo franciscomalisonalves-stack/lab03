@@ -1,10 +1,10 @@
 import java.util.Objects;
 
 public class Filme {
-    private int idFilme;
-    private String nome;
-    private int anoLancamento;
-    private String streamer;
+    private final int idFilme;
+    private final String nome;
+    private final int anoLancamento;
+    private final String streamer;
     private boolean isHot = false;
 
     public Filme(int idFilme, String nome, int anoLancamento, String streamer){
@@ -13,14 +13,6 @@ public class Filme {
         this.anoLancamento = anoLancamento;
         this.streamer = streamer;
     }
-
-    public String getNome(){ return nome;}
-
-    public String getStreamer(){return streamer;}
-
-    public int getAnoLancamento(){return anoLancamento;}
-
-    public boolean getIsHot(){return isHot;}
 
     public void mudarIsHot(boolean isHot){
         this.isHot = isHot;

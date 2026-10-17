@@ -1,4 +1,3 @@
-import java.util.Locale;
 import java.util.Scanner;
 
 public class MainFilmNow {
@@ -25,6 +24,7 @@ public class MainFilmNow {
         do{
             System.out.print(MENU);
             op = sc.nextLine().toUpperCase();
+            System.out.println();
                 switch (op){
                     case ADICIONAR_FILME:
                         adicionarFilme(sistema,sc);
