@@ -77,7 +77,7 @@ public class FilmNow {
         return "ADICIONADO À HOTLIST NA POSIÇÃO " + posicao + "!";
     }
     public String removeHotList(int posicao){
-        if(posicao> 10|| posicao< 1||listaHots[posicao] == null){return "posição inválida adcionada!";}
+        if(posicao> 10|| posicao< 1||listaHots[posicao-1] == null){return "posição inválida adcionada!";}
         listaHots[posicao-1].mudarIsHot(false);
         listaHots[posicao-1] = null;
         return "";
