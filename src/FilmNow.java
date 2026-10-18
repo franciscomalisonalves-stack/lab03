@@ -10,7 +10,7 @@ public class FilmNow {
             return "Posição Invalida";
         }
         Filme filme = new Filme(idFilme,nome,anoLancamento,streamer);
-        if(filmeJaAdicionado(filme, false)){
+        if(filmeJaAdicionado(filme, listaFilmes)){
             return "Filme já Adicionado";
         }
         listaFilmes[idFilme-1] = filme;
@@ -65,7 +65,7 @@ public class FilmNow {
         if (listaFilmes[idFilme- 1] == null){return "FILME NÃO ADICIONADO NA POSIÇÃO";}
 
         Filme filme = listaFilmes[idFilme - 1];
-        if (filmeJaAdicionado(filme, true)){return "FILME JÁ ADICIONADO";}
+        if (filmeJaAdicionado(filme,listaHots)){return "FILME JÁ ADICIONADO";}
 
         if(listaHots[posicao-1] != null){
             listaHots[posicao-1].mudarIsHot(false);
@@ -82,15 +82,8 @@ public class FilmNow {
         listaHots[posicao-1] = null;
         return "";
     }
-    private boolean filmeJaAdicionado(Filme filme, boolean hotList){
-        Filme [] lista;
-        if(hotList){
-            lista = listaHots;
-        }else{
-            lista = listaFilmes;
-        }
-
-        for (Filme filmesPresente: lista) {
+    private boolean filmeJaAdicionado(Filme filme, Filme [] array){
+        for (Filme filmesPresente: array) {
             if (filme.equals(filmesPresente)) {
                 return true;
             }
