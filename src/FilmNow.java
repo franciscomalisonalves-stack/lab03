@@ -1,9 +1,9 @@
 public class FilmNow {
-    private Filme[] listaFilmes = new Filme[100];
-    private Filme[] listaHots = new Filme[10];
+    private final Filme[] listaFilmes = new Filme[100];
+    private final Filme[] listaHots = new Filme[10];
 
     public String adicionarFilme(int idFilme, String nome, int anoLancamento, String streamer) {
-        if(nome.isEmpty() || streamer.isEmpty()){
+        if(nome.isBlank() || streamer.isBlank()){
             return "Filme inválido";
         }
         if (idFilme > 100 || idFilme < 1){
